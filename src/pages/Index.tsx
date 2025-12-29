@@ -40,7 +40,7 @@ const gameProjects = [
     id: 'majestic',
     name: 'MAJESTIC',
     icon: 'Crown',
-    buyback: '200₽-500₽ за 1КК',
+    buyback: '200₽-550₽ за 1КК',
     servers: [
       { name: 'New York', price: 550 },
       { name: 'Detroit', price: 550 },
