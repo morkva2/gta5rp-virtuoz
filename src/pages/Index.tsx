@@ -9,7 +9,7 @@ const gameProjects = [
     id: 'gta5rp',
     name: 'GTA 5 RP',
     icon: 'Gamepad2',
-    buyback: '400₽-800₽ за 1КК',
+    buyback: '400₽-1200₽ за 1КК',
     servers: [
       { name: 'Downtown', price: 1099 },
       { name: 'Strawberry', price: 1099 },
@@ -32,7 +32,8 @@ const gameProjects = [
       { name: 'Grapeseed', price: 1099 },
       { name: 'Murrieta', price: 1099 },
       { name: 'Vespucci', price: 1099 },
-      { name: 'Milton', price: 1099 }
+      { name: 'Milton', price: 1099 },
+      { name: 'LAPUERTA', price: 1700 }
     ]
   },
   {
