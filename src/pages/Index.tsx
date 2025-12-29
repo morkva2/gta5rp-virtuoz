@@ -354,10 +354,26 @@ export default function Index() {
         )}
       </main>
 
-      <footer className="border-t border-border mt-20 py-10 bg-background/80">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p className="text-base">&copy; 2024 GTA5 VIRTS. Все права защищены.</p>
-          <p className="text-sm mt-2">Мы не связаны с Rockstar Games или Take-Two Interactive</p>
+      <footer className="border-t border-border mt-20 py-16 bg-background/80">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center gap-8">
+            <div className="flex items-center gap-12 opacity-30 grayscale hover:opacity-50 hover:grayscale-0 transition-all">
+              <img 
+                src="https://cdn.poehali.dev/projects/eff92dda-0b08-477c-b46f-8d56412d7550/files/fa957f96-8c1a-43d1-a588-54a34f607fe2.jpg" 
+                alt="GTA 5 Logo" 
+                className="h-20 object-contain"
+              />
+              <img 
+                src="https://cdn.poehali.dev/projects/eff92dda-0b08-477c-b46f-8d56412d7550/files/772e7477-e159-40b8-a489-b92a6f6339e6.jpg" 
+                alt="Rockstar Games Logo" 
+                className="h-16 object-contain"
+              />
+            </div>
+            <div className="text-center text-muted-foreground">
+              <p className="text-base">&copy; 2024 GTA5 VIRTS. Все права защищены.</p>
+              <p className="text-sm mt-2">Мы не связаны с Rockstar Games или Take-Two Interactive</p>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
