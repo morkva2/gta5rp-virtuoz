@@ -213,7 +213,7 @@ export default function Index() {
                       </div>
                       
                       <Button 
-                        onClick={() => window.open('https://t.me/Feruchioshopps', '_blank')}
+                        onClick={() => window.open('https://t.me/Ferh_777', '_blank')}
                         className="w-full gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
                       >
                         <Icon name="ShoppingBag" size={18} />
@@ -231,7 +231,7 @@ export default function Index() {
                     <h3 className="text-2xl font-heading font-bold mb-2">Уточняйте цены в Telegram</h3>
                     <p className="text-muted-foreground mb-6">{selectedProject.description}</p>
                     <Button 
-                      onClick={() => window.open('https://t.me/Feruchioshopps', '_blank')}
+                      onClick={() => window.open('https://t.me/Ferh_777', '_blank')}
                       size="lg"
                       className="gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
                     >
