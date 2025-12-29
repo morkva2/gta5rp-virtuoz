@@ -4,74 +4,105 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 
-const products = [
+const gameProjects = [
   {
-    id: 1,
-    name: '100K Игровых денег',
-    price: 99,
-    discount: null,
-    popular: false,
-    servers: ['Arizona RP', 'Radmir RP', 'Advance RP']
+    id: 'gta5rp',
+    name: 'GTA 5 RP',
+    icon: 'Gamepad2',
+    buyback: '400₽-800₽ за 1КК',
+    servers: [
+      { name: 'Downtown', price: 1099 },
+      { name: 'Strawberry', price: 1099 },
+      { name: 'Vinewood', price: 1099 },
+      { name: 'Blackberry', price: 1099 },
+      { name: 'Insquad', price: 1099 },
+      { name: 'Sunrise', price: 1099 },
+      { name: 'Rainbow', price: 1099 },
+      { name: 'Richman', price: 1099 },
+      { name: 'Eclipse', price: 1099 },
+      { name: 'Lamesa', price: 1099 },
+      { name: 'Burton', price: 1099 },
+      { name: 'Rockford', price: 1099 },
+      { name: 'Alta', price: 1099 },
+      { name: 'Del Perro', price: 1099 },
+      { name: 'Davis', price: 1099 },
+      { name: 'Harmony', price: 1099 },
+      { name: 'Redwood', price: 1099 },
+      { name: 'Hawick', price: 1099 },
+      { name: 'Grapeseed', price: 1099 },
+      { name: 'Murrieta', price: 1099 },
+      { name: 'Vespucci', price: 1099 },
+      { name: 'Milton', price: 1099 }
+    ]
   },
   {
-    id: 2,
-    name: '500K Игровых денег',
-    price: 449,
-    discount: 10,
-    popular: true,
-    servers: ['Arizona RP', 'Radmir RP', 'Advance RP', 'Amazing RP']
+    id: 'majestic',
+    name: 'MAJESTIC',
+    icon: 'Crown',
+    buyback: '200₽-500₽ за 1КК',
+    servers: [
+      { name: 'New York', price: 550 },
+      { name: 'Detroit', price: 550 },
+      { name: 'Chicago', price: 550 },
+      { name: 'San Francisco', price: 550 },
+      { name: 'Atlanta', price: 550 },
+      { name: 'San Diego', price: 550 },
+      { name: 'Los Angeles', price: 550 },
+      { name: 'Miami', price: 550 },
+      { name: 'Las Vegas', price: 580 },
+      { name: 'Washington', price: 580 },
+      { name: 'Dallas', price: 580 },
+      { name: 'Boston', price: 580 },
+      { name: 'Houston', price: 600 },
+      { name: 'Seattle', price: 600 },
+      { name: 'Phoenix', price: 550 },
+      { name: 'Denver', price: 650 },
+      { name: 'Portland', price: 900 }
+    ]
   },
   {
-    id: 3,
-    name: '1M Игровых денег',
-    price: 799,
-    discount: 15,
-    popular: false,
-    servers: ['Arizona RP', 'Radmir RP', 'Advance RP', 'Amazing RP']
+    id: 'radmir',
+    name: 'RADMIR',
+    icon: 'Radio',
+    buyback: '70₽-100₽ за 1КК',
+    servers: [
+      { name: 'Сервер 1', price: 150 },
+      { name: 'Сервер 2', price: 150 },
+      { name: 'Сервер 3', price: 150 }
+    ]
   },
   {
-    id: 4,
-    name: '2M Игровых денег',
-    price: 1499,
-    discount: 20,
-    popular: false,
-    servers: ['Arizona RP', 'Radmir RP', 'Advance RP', 'Amazing RP']
+    id: 'blackrussia',
+    name: 'BLACK RUSSIA',
+    icon: 'Shield',
+    buyback: '25₽-50₽ за 1КК',
+    description: 'Продажа по 50₽-75₽ (уточняйте в лс)',
+    servers: []
   },
   {
-    id: 5,
-    name: '5M Игровых денег',
-    price: 3499,
-    discount: 25,
-    popular: false,
-    servers: ['Arizona RP', 'Radmir RP', 'Advance RP', 'Amazing RP']
-  },
-  {
-    id: 6,
-    name: '10M Игровых денег',
-    price: 6499,
-    discount: 30,
-    popular: false,
-    servers: ['Arizona RP', 'Radmir RP', 'Advance RP', 'Amazing RP']
+    id: 'rmrp',
+    name: 'RMRP',
+    icon: 'Building2',
+    buyback: '70₽-120₽ за 1КК',
+    servers: [
+      { name: 'Рублевка', price: 165 },
+      { name: 'Арбат', price: 135 },
+      { name: 'Патрики', price: 150 },
+      { name: 'Тверской', price: 180 }
+    ]
   }
 ];
 
-const servers = [
-  { name: 'Arizona RP', players: '15000+', status: 'online' },
-  { name: 'Radmir RP', players: '12000+', status: 'online' },
-  { name: 'Advance RP', players: '8000+', status: 'online' },
-  { name: 'Amazing RP', players: '6000+', status: 'online' }
-];
-
 const rules = [
-  { title: 'Безопасная оплата', description: 'Все платежи защищены SSL-шифрованием' },
-  { title: 'Моментальная доставка', description: 'Виртуальная валюта зачисляется в течение 5 минут' },
-  { title: 'Гарантия качества', description: 'Возврат средств в случае технических проблем' },
-  { title: 'Поддержка 24/7', description: 'Всегда готовы помочь с любыми вопросами' }
+  { title: 'Безопасная оплата', description: 'Работаем напрямую через Telegram' },
+  { title: 'Моментальная доставка', description: 'Виртуальная валюта зачисляется быстро' },
+  { title: 'Скупка валюты', description: 'Выкупаем игровую валюту по выгодным ценам' },
+  { title: 'Поддержка 24/7', description: 'Всегда на связи в Telegram' }
 ];
 
 export default function Index() {
   const [activeTab, setActiveTab] = useState('catalog');
-  const filteredProducts = products;
+  const [selectedProject, setSelectedProject] = useState(gameProjects[0]);
 
   return (
     <div className="min-h-screen bg-background animated-bg grid-pattern relative overflow-hidden">
@@ -111,92 +142,106 @@ export default function Index() {
       <main className="container mx-auto px-4 py-12">
         {activeTab === 'catalog' && (
           <div className="animate-fade-in">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                Виртуальная валюта GTA 5 RP
+                Виртуальная валюта для RP серверов
               </h2>
               <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
-                Покупайте игровые деньги и донат-валюту для всех популярных серверов
+                Выберите игровой проект и сервер для покупки
               </p>
             </div>
 
-
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProducts.map((product, index) => (
-                <Card 
-                  key={product.id} 
-                  className="hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 relative overflow-hidden border-2 border-border bg-card"
-                  style={{ animationDelay: `${index * 100}ms` }}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {gameProjects.map((project) => (
+                <Button
+                  key={project.id}
+                  size="lg"
+                  variant={selectedProject.id === project.id ? 'default' : 'outline'}
+                  onClick={() => setSelectedProject(project)}
+                  className={selectedProject.id === project.id ? 'gradient-primary text-white shadow-lg' : 'border-2'}
                 >
-                  {product.popular && (
-                    <div className="absolute top-4 right-4 z-10">
-                      <Badge className="bg-secondary text-white shadow-lg text-sm px-3 py-1">
-                        <Icon name="Star" size={14} />
-                        <span className="ml-1">Хит продаж</span>
-                      </Badge>
+                  <Icon name={project.icon as any} size={20} />
+                  <span className="ml-2">{project.name}</span>
+                </Button>
+              ))}
+            </div>
+
+            <div className="max-w-5xl mx-auto mb-12">
+              <Card className="border-2 border-primary/30 bg-card/50">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon name={selectedProject.icon as any} size={28} className="text-white" />
                     </div>
-                  )}
-                  {product.discount && (
-                    <div className="absolute top-4 left-4 z-10">
-                      <Badge className="bg-destructive text-white shadow-lg text-sm px-3 py-1">
-                        -{product.discount}%
-                      </Badge>
-                    </div>
-                  )}
-                  
-                  <CardHeader className="pb-4">
-                    <div className="w-20 h-20 mx-auto mb-6 gradient-primary rounded-2xl flex items-center justify-center shadow-xl">
-                      <Icon 
-                        name="DollarSign" 
-                        size={36} 
-                        className="text-white"
-                      />
-                    </div>
-                    <CardTitle className="text-center font-heading text-2xl mb-2">
-                      {product.name}
-                    </CardTitle>
-                    <CardDescription className="text-center text-base">
-                      Доступно на {product.servers.length} серверах
-                    </CardDescription>
-                  </CardHeader>
-                  
-                  <CardContent className="space-y-6">
-                    <div className="text-center">
-                      <div className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                        {product.price} ₽
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-heading font-bold mb-2">{selectedProject.name}</h3>
+                      {selectedProject.description && (
+                        <p className="text-muted-foreground mb-3">{selectedProject.description}</p>
+                      )}
+                      <div className="flex items-center gap-2 text-sm">
+                        <Badge variant="outline" className="border-green-500 text-green-500">
+                          <Icon name="TrendingUp" size={14} />
+                          <span className="ml-1">Скупка: {selectedProject.buyback}</span>
+                        </Badge>
                       </div>
-                      {product.discount && (
-                        <div className="text-sm text-muted-foreground line-through mt-1">
-                          {Math.round(product.price / (1 - product.discount / 100))} ₽
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {selectedProject.servers.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {selectedProject.servers.map((server, index) => (
+                  <Card 
+                    key={server.name} 
+                    className="hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 border-2 border-border bg-card"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-center font-heading text-xl">
+                        {server.name}
+                      </CardTitle>
+                    </CardHeader>
+                    
+                    <CardContent className="space-y-4">
+                      <div className="text-center">
+                        <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                          {server.price} ₽
                         </div>
-                      )}
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-2 justify-center">
-                      {product.servers.slice(0, 2).map((server) => (
-                        <Badge key={server} variant="outline" className="text-xs border-2">
-                          {server}
-                        </Badge>
-                      ))}
-                      {product.servers.length > 2 && (
-                        <Badge variant="outline" className="text-xs border-2">
-                          +{product.servers.length - 2}
-                        </Badge>
-                      )}
-                    </div>
-                    
+                        <div className="text-sm text-muted-foreground mt-1">за 1КК</div>
+                      </div>
+                      
+                      <Button 
+                        onClick={() => window.open('https://t.me/Feruchioshopps', '_blank')}
+                        className="w-full gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                      >
+                        <Icon name="ShoppingBag" size={18} />
+                        <span className="ml-2">Купить</span>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <Card className="border-2 border-border bg-card/50 max-w-2xl mx-auto">
+                  <CardContent className="pt-8 pb-8">
+                    <Icon name="MessageCircle" size={48} className="text-primary mx-auto mb-4" />
+                    <h3 className="text-2xl font-heading font-bold mb-2">Уточняйте цены в Telegram</h3>
+                    <p className="text-muted-foreground mb-6">{selectedProject.description}</p>
                     <Button 
                       onClick={() => window.open('https://t.me/Feruchioshopps', '_blank')}
-                      className="w-full gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all h-12"
+                      size="lg"
+                      className="gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
                     >
-                      <Icon name="ShoppingBag" size={18} />
-                      <span className="ml-2">Купить</span>
+                      <Icon name="Send" size={20} />
+                      <span className="ml-2">Связаться в Telegram</span>
                     </Button>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         )}
 
@@ -204,34 +249,35 @@ export default function Index() {
           <div className="animate-fade-in">
             <div className="text-center mb-16">
               <h2 className="text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Поддерживаемые серверы
+                Игровые проекты
               </h2>
               <p className="text-muted-foreground text-xl">
-                Мы работаем с самыми популярными GTA 5 RP проектами
+                Все поддерживаемые RP проекты
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {servers.map((server, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {gameProjects.map((project, index) => (
                 <Card 
-                  key={server.name} 
+                  key={project.id} 
                   className="hover:shadow-2xl hover:shadow-primary/20 transition-all border-2 border-border bg-card"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <CardHeader className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
-                          <Icon name="Server" size={28} className="text-primary" />
-                        </div>
-                        <div>
-                          <CardTitle className="font-heading text-xl">{server.name}</CardTitle>
-                          <CardDescription className="text-base">{server.players} игроков</CardDescription>
-                        </div>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-14 h-14 gradient-primary rounded-xl flex items-center justify-center">
+                        <Icon name={project.icon as any} size={28} className="text-white" />
                       </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm text-green-600 font-semibold">Online</span>
+                      <CardTitle className="font-heading text-xl">{project.name}</CardTitle>
+                    </div>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Icon name="Server" size={16} />
+                        <span>{project.servers.length > 0 ? `${project.servers.length} серверов` : 'Уточняйте в Telegram'}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-green-500">
+                        <Icon name="TrendingUp" size={16} />
+                        <span>Скупка: {project.buyback}</span>
                       </div>
                     </div>
                   </CardHeader>
