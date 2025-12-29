@@ -83,7 +83,7 @@ export default function Index() {
                 <Icon name="Gamepad2" className="text-white" size={26} />
               </div>
               <h1 className="text-3xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                GTA5 VIRTS
+                FERUCHIO SHOP
               </h1>
             </div>
             <nav className="flex gap-8">
@@ -369,7 +369,7 @@ export default function Index() {
               />
             </div>
             <div className="text-center text-muted-foreground">
-              <p className="text-base">&copy; 2024 GTA5 VIRTS. Все права защищены.</p>
+              <p className="text-base">&copy; 2024 FERUCHIO SHOP. Все права защищены.</p>
               <p className="text-sm mt-2">Мы не связаны с Rockstar Games или Take-Two Interactive</p>
             </div>
           </div>
