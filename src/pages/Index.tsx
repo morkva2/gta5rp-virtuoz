@@ -84,24 +84,26 @@ export default function Index() {
     : products.filter(p => p.type === selectedType);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
-      <header className="border-b border-border/40 backdrop-blur-sm sticky top-0 z-50 bg-background/80">
-        <div className="container mx-auto px-4 py-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50">
+      <header className="border-b border-border backdrop-blur-sm sticky top-0 z-50 bg-white/80">
+        <div className="container mx-auto px-4 py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center glow-green">
-                <Icon name="Gamepad2" className="text-black" size={24} />
+              <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center shadow-lg">
+                <Icon name="Gamepad2" className="text-white" size={26} />
               </div>
-              <h1 className="text-2xl font-heading font-bold text-glow">GTA5 VIRTS</h1>
+              <h1 className="text-3xl font-heading font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                GTA5 VIRTS
+              </h1>
             </div>
-            <nav className="hidden md:flex gap-6">
+            <nav className="hidden md:flex gap-8">
               {['catalog', 'servers', 'rules', 'contacts'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`font-medium transition-all ${
+                  className={`font-semibold transition-all text-base ${
                     activeTab === tab 
-                      ? 'text-primary text-glow' 
+                      ? 'text-primary' 
                       : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
@@ -112,7 +114,7 @@ export default function Index() {
                 </button>
               ))}
             </nav>
-            <Button className="gta-gradient text-black font-bold hover:scale-105 transition-transform">
+            <Button className="gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all">
               <Icon name="ShoppingCart" size={18} />
               <span className="ml-2">Корзина</span>
             </Button>
@@ -120,56 +122,57 @@ export default function Index() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-12">
         {activeTab === 'catalog' && (
           <div className="animate-fade-in">
-            <div className="text-center mb-12">
-              <h2 className="text-5xl font-heading font-bold mb-4 text-glow">
+            <div className="text-center mb-16">
+              <h2 className="text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
                 Виртуальная валюта GTA 5 RP
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
                 Покупайте игровые деньги и донат-валюту для всех популярных серверов
               </p>
             </div>
 
-            <div className="flex justify-center gap-4 mb-8">
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
               <Button
+                size="lg"
                 variant={selectedType === 'all' ? 'default' : 'outline'}
                 onClick={() => setSelectedType('all')}
-                className={selectedType === 'all' ? 'gta-gradient text-black' : ''}
+                className={selectedType === 'all' ? 'gradient-primary text-white shadow-lg' : 'border-2'}
               >
                 Все товары
               </Button>
               <Button
+                size="lg"
                 variant={selectedType === 'money' ? 'default' : 'outline'}
                 onClick={() => setSelectedType('money')}
-                className={selectedType === 'money' ? 'bg-primary text-black' : ''}
+                className={selectedType === 'money' ? 'bg-primary text-white shadow-lg' : 'border-2'}
               >
-                <Icon name="DollarSign" size={18} />
-                <span className="ml-1">Игровые деньги</span>
+                <Icon name="DollarSign" size={20} />
+                <span className="ml-2">Игровые деньги</span>
               </Button>
               <Button
+                size="lg"
                 variant={selectedType === 'premium' ? 'default' : 'outline'}
                 onClick={() => setSelectedType('premium')}
-                className={selectedType === 'premium' ? 'bg-accent text-white' : ''}
+                className={selectedType === 'premium' ? 'bg-secondary text-white shadow-lg' : 'border-2'}
               >
-                <Icon name="Gem" size={18} />
-                <span className="ml-1">Донат-валюта</span>
+                <Icon name="Gem" size={20} />
+                <span className="ml-2">Донат-валюта</span>
               </Button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProducts.map((product, index) => (
                 <Card 
                   key={product.id} 
-                  className={`gta-border hover:scale-105 transition-all duration-300 relative overflow-hidden ${
-                    product.popular ? 'animate-pulse-glow' : ''
-                  }`}
+                  className="hover:shadow-2xl transition-all duration-300 relative overflow-hidden border-2 bg-white"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {product.popular && (
                     <div className="absolute top-4 right-4 z-10">
-                      <Badge className="bg-accent text-white glow-purple">
+                      <Badge className="bg-secondary text-white shadow-lg text-sm px-3 py-1">
                         <Icon name="Star" size={14} />
                         <span className="ml-1">Хит продаж</span>
                       </Badge>
@@ -177,35 +180,35 @@ export default function Index() {
                   )}
                   {product.discount && (
                     <div className="absolute top-4 left-4 z-10">
-                      <Badge className="bg-destructive text-white">
+                      <Badge className="bg-destructive text-white shadow-lg text-sm px-3 py-1">
                         -{product.discount}%
                       </Badge>
                     </div>
                   )}
                   
-                  <CardHeader>
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center glow-green">
+                  <CardHeader className="pb-4">
+                    <div className={`w-20 h-20 mx-auto mb-6 ${product.type === 'money' ? 'gradient-primary' : 'gradient-accent'} rounded-2xl flex items-center justify-center shadow-xl`}>
                       <Icon 
                         name={product.type === 'money' ? 'DollarSign' : 'Gem'} 
-                        size={32} 
-                        className="text-black"
+                        size={36} 
+                        className="text-white"
                       />
                     </div>
-                    <CardTitle className="text-center font-heading text-2xl">
+                    <CardTitle className="text-center font-heading text-2xl mb-2">
                       {product.name}
                     </CardTitle>
-                    <CardDescription className="text-center">
+                    <CardDescription className="text-center text-base">
                       Доступно на {product.servers.length} серверах
                     </CardDescription>
                   </CardHeader>
                   
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-6">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary">
+                      <div className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                         {product.price} ₽
                       </div>
                       {product.discount && (
-                        <div className="text-sm text-muted-foreground line-through">
+                        <div className="text-sm text-muted-foreground line-through mt-1">
                           {Math.round(product.price / (1 - product.discount / 100))} ₽
                         </div>
                       )}
@@ -213,18 +216,18 @@ export default function Index() {
                     
                     <div className="flex flex-wrap gap-2 justify-center">
                       {product.servers.slice(0, 2).map((server) => (
-                        <Badge key={server} variant="outline" className="text-xs">
+                        <Badge key={server} variant="outline" className="text-xs border-2">
                           {server}
                         </Badge>
                       ))}
                       {product.servers.length > 2 && (
-                        <Badge variant="outline" className="text-xs">
+                        <Badge variant="outline" className="text-xs border-2">
                           +{product.servers.length - 2}
                         </Badge>
                       )}
                     </div>
                     
-                    <Button className="w-full gta-gradient text-black font-bold hover:scale-105 transition-transform">
+                    <Button className="w-full gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all h-12">
                       <Icon name="ShoppingCart" size={18} />
                       <span className="ml-2">Купить</span>
                     </Button>
@@ -237,11 +240,11 @@ export default function Index() {
 
         {activeTab === 'servers' && (
           <div className="animate-fade-in">
-            <div className="text-center mb-12">
-              <h2 className="text-5xl font-heading font-bold mb-4 text-glow">
+            <div className="text-center mb-16">
+              <h2 className="text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Поддерживаемые серверы
               </h2>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-muted-foreground text-xl">
                 Мы работаем с самыми популярными GTA 5 RP проектами
               </p>
             </div>
@@ -250,23 +253,23 @@ export default function Index() {
               {servers.map((server, index) => (
                 <Card 
                   key={server.name} 
-                  className="gta-border hover:scale-105 transition-all"
+                  className="hover:shadow-2xl transition-all border-2 bg-white"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <CardHeader>
+                  <CardHeader className="p-6">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                          <Icon name="Server" size={24} className="text-primary" />
+                        <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
+                          <Icon name="Server" size={28} className="text-primary" />
                         </div>
                         <div>
-                          <CardTitle className="font-heading">{server.name}</CardTitle>
-                          <CardDescription>{server.players} игроков</CardDescription>
+                          <CardTitle className="font-heading text-xl">{server.name}</CardTitle>
+                          <CardDescription className="text-base">{server.players} игроков</CardDescription>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                        <span className="text-sm text-primary font-medium">Online</span>
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm text-green-600 font-semibold">Online</span>
                       </div>
                     </div>
                   </CardHeader>
@@ -278,11 +281,11 @@ export default function Index() {
 
         {activeTab === 'rules' && (
           <div className="animate-fade-in">
-            <div className="text-center mb-12">
-              <h2 className="text-5xl font-heading font-bold mb-4 text-glow">
+            <div className="text-center mb-16">
+              <h2 className="text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Правила и гарантии
               </h2>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-muted-foreground text-xl">
                 Мы заботимся о вашей безопасности и комфорте
               </p>
             </div>
@@ -291,12 +294,17 @@ export default function Index() {
               {rules.map((rule, index) => (
                 <Card 
                   key={rule.title} 
-                  className="gta-border hover:scale-105 transition-all"
+                  className="hover:shadow-2xl transition-all border-2 bg-white"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <CardHeader>
+                  <CardHeader className="p-6">
                     <div className="flex gap-4">
-                      <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className={`w-14 h-14 ${
+                        index === 0 ? 'bg-primary/10' :
+                        index === 1 ? 'bg-accent/10' :
+                        index === 2 ? 'bg-green-100' :
+                        'bg-secondary/10'
+                      } rounded-xl flex items-center justify-center flex-shrink-0`}>
                         <Icon 
                           name={
                             index === 0 ? 'Shield' : 
@@ -304,13 +312,18 @@ export default function Index() {
                             index === 2 ? 'CheckCircle' : 
                             'Headphones'
                           } 
-                          size={24} 
-                          className="text-accent"
+                          size={28} 
+                          className={
+                            index === 0 ? 'text-primary' :
+                            index === 1 ? 'text-accent' :
+                            index === 2 ? 'text-green-600' :
+                            'text-secondary'
+                          }
                         />
                       </div>
                       <div>
-                        <CardTitle className="font-heading mb-2">{rule.title}</CardTitle>
-                        <CardDescription>{rule.description}</CardDescription>
+                        <CardTitle className="font-heading mb-3 text-xl">{rule.title}</CardTitle>
+                        <CardDescription className="text-base">{rule.description}</CardDescription>
                       </div>
                     </div>
                   </CardHeader>
@@ -322,52 +335,52 @@ export default function Index() {
 
         {activeTab === 'contacts' && (
           <div className="animate-fade-in">
-            <div className="text-center mb-12">
-              <h2 className="text-5xl font-heading font-bold mb-4 text-glow">
+            <div className="text-center mb-16">
+              <h2 className="text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 Связаться с нами
               </h2>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-muted-foreground text-xl">
                 Мы всегда на связи и готовы помочь
               </p>
             </div>
 
             <div className="max-w-2xl mx-auto">
-              <Card className="gta-border">
-                <CardContent className="pt-6 space-y-6">
-                  <div className="flex items-center gap-4 p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                      <Icon name="MessageCircle" size={24} className="text-primary" />
+              <Card className="border-2 shadow-2xl bg-white">
+                <CardContent className="pt-8 space-y-6 p-8">
+                  <div className="flex items-center gap-5 p-5 bg-primary/5 rounded-xl hover:bg-primary/10 transition-colors">
+                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Icon name="MessageCircle" size={28} className="text-primary" />
                     </div>
                     <div>
-                      <div className="font-semibold">Telegram</div>
-                      <div className="text-sm text-muted-foreground">@gta5virts_support</div>
+                      <div className="font-semibold text-lg">Telegram</div>
+                      <div className="text-muted-foreground">@gta5virts_support</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                    <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
-                      <Icon name="Mail" size={24} className="text-accent" />
+                  <div className="flex items-center gap-5 p-5 bg-secondary/5 rounded-xl hover:bg-secondary/10 transition-colors">
+                    <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center">
+                      <Icon name="Mail" size={28} className="text-secondary" />
                     </div>
                     <div>
-                      <div className="font-semibold">Email</div>
-                      <div className="text-sm text-muted-foreground">support@gta5virts.com</div>
+                      <div className="font-semibold text-lg">Email</div>
+                      <div className="text-muted-foreground">support@gta5virts.com</div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 p-4 bg-muted/50 rounded-lg hover:bg-muted transition-colors">
-                    <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center">
-                      <Icon name="Phone" size={24} className="text-secondary" />
+                  <div className="flex items-center gap-5 p-5 bg-accent/5 rounded-xl hover:bg-accent/10 transition-colors">
+                    <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center">
+                      <Icon name="Phone" size={28} className="text-accent" />
                     </div>
                     <div>
-                      <div className="font-semibold">Телефон</div>
-                      <div className="text-sm text-muted-foreground">+7 (999) 123-45-67</div>
+                      <div className="font-semibold text-lg">Телефон</div>
+                      <div className="text-muted-foreground">+7 (999) 123-45-67</div>
                     </div>
                   </div>
 
-                  <div className="text-center pt-4">
-                    <p className="text-muted-foreground mb-4">Режим работы: 24/7</p>
-                    <Button className="gta-gradient text-black font-bold hover:scale-105 transition-transform">
-                      <Icon name="Send" size={18} />
+                  <div className="text-center pt-6">
+                    <p className="text-muted-foreground mb-6 text-lg">Режим работы: 24/7</p>
+                    <Button className="gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all h-12 px-8 text-base">
+                      <Icon name="Send" size={20} />
                       <span className="ml-2">Написать в поддержку</span>
                     </Button>
                   </div>
@@ -378,9 +391,9 @@ export default function Index() {
         )}
       </main>
 
-      <footer className="border-t border-border/40 mt-16 py-8">
+      <footer className="border-t border-border mt-20 py-10 bg-white/80">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; 2024 GTA5 VIRTS. Все права защищены.</p>
+          <p className="text-base">&copy; 2024 GTA5 VIRTS. Все права защищены.</p>
           <p className="text-sm mt-2">Мы не связаны с Rockstar Games или Take-Two Interactive</p>
         </div>
       </footer>

@@ -106,8 +106,8 @@ export default {
 				'slide-in': 'slide-in 0.5s ease-out'
 			},
 			fontFamily: {
-				sans: ['Roboto', 'sans-serif'],
-				heading: ['Oswald', 'sans-serif']
+				sans: ['Open Sans', 'sans-serif'],
+				heading: ['Montserrat', 'sans-serif']
 			}
 		}
 	},
