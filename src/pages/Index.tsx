@@ -352,45 +352,75 @@ export default function Index() {
               </p>
             </div>
 
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-3xl mx-auto">
               <Card className="border-2 border-border shadow-2xl shadow-primary/10 bg-card">
-                <CardContent className="pt-8 space-y-6 p-8">
-                  <div className="flex items-center gap-5 p-5 bg-primary/5 rounded-xl hover:bg-primary/10 transition-colors">
+                <CardContent className="pt-8 space-y-5 p-8">
+                  <a 
+                    href="https://t.me/Feruchio_Shop" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-5 p-5 bg-primary/5 rounded-xl hover:bg-primary/10 transition-all hover:scale-[1.02]"
+                  >
                     <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center">
                       <Icon name="MessageCircle" size={28} className="text-primary" />
                     </div>
-                    <div>
-                      <div className="font-semibold text-lg">Telegram</div>
-                      <div className="text-muted-foreground">@gta5virts_support</div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-lg">TELEGRAM</div>
+                      <div className="text-muted-foreground">@Feruchio_Shop или @Ferh_777</div>
                     </div>
-                  </div>
+                    <Icon name="ExternalLink" size={20} className="text-muted-foreground" />
+                  </a>
 
-                  <div className="flex items-center gap-5 p-5 bg-secondary/5 rounded-xl hover:bg-secondary/10 transition-colors">
+                  <a 
+                    href="https://funpay.com/users/8184778/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-5 p-5 bg-secondary/5 rounded-xl hover:bg-secondary/10 transition-all hover:scale-[1.02]"
+                  >
                     <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center">
-                      <Icon name="Mail" size={28} className="text-secondary" />
+                      <Icon name="ShoppingCart" size={28} className="text-secondary" />
                     </div>
-                    <div>
-                      <div className="font-semibold text-lg">Email</div>
-                      <div className="text-muted-foreground">support@gta5virts.com</div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-lg">FUNPAY</div>
+                      <div className="text-muted-foreground">funpay.com/users/8184778/</div>
                     </div>
-                  </div>
+                    <Icon name="ExternalLink" size={20} className="text-muted-foreground" />
+                  </a>
 
-                  <div className="flex items-center gap-5 p-5 bg-accent/5 rounded-xl hover:bg-accent/10 transition-colors">
+                  <a 
+                    href="https://discord.gg/FNZ4uPrT" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-5 p-5 bg-accent/5 rounded-xl hover:bg-accent/10 transition-all hover:scale-[1.02]"
+                  >
                     <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center">
-                      <Icon name="Phone" size={28} className="text-accent" />
+                      <Icon name="Gamepad2" size={28} className="text-accent" />
                     </div>
-                    <div>
-                      <div className="font-semibold text-lg">Телефон</div>
-                      <div className="text-muted-foreground">+7 (999) 123-45-67</div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-lg">DISCORD</div>
+                      <div className="text-muted-foreground">discord.gg/FNZ4uPrT</div>
                     </div>
-                  </div>
+                    <Icon name="ExternalLink" size={20} className="text-muted-foreground" />
+                  </a>
 
-                  <div className="text-center pt-6">
-                    <p className="text-muted-foreground mb-6 text-lg">Режим работы: 24/7</p>
-                    <Button className="gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all h-12 px-8 text-base">
-                      <Icon name="Send" size={20} />
-                      <span className="ml-2">Написать в поддержку</span>
-                    </Button>
+                  <a 
+                    href="https://t.me/+5jdQ8CnzlEk1MjVi" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-5 p-5 bg-green-500/5 rounded-xl hover:bg-green-500/10 transition-all hover:scale-[1.02]"
+                  >
+                    <div className="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center">
+                      <Icon name="Star" size={28} className="text-green-500" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-lg">ОТЗЫВЫ</div>
+                      <div className="text-muted-foreground">Telegram канал с отзывами</div>
+                    </div>
+                    <Icon name="ExternalLink" size={20} className="text-muted-foreground" />
+                  </a>
+
+                  <div className="text-center pt-6 border-t border-border">
+                    <p className="text-muted-foreground text-lg">Режим работы: 24/7</p>
                   </div>
                 </CardContent>
               </Card>
