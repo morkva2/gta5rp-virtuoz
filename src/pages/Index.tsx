@@ -104,6 +104,8 @@ const rules = [
 export default function Index() {
   const [activeTab, setActiveTab] = useState('catalog');
   const [selectedProject, setSelectedProject] = useState(gameProjects[0]);
+  const [news, setNews] = useState<any[]>([]);
+  const [loadingNews, setLoadingNews] = useState(false);
 
   return (
     <div className="min-h-screen bg-background animated-bg grid-pattern relative overflow-hidden">
@@ -119,7 +121,7 @@ export default function Index() {
               </h1>
             </div>
             <nav className="flex gap-8">
-              {['catalog', 'servers', 'rules', 'contacts'].map((tab) => (
+              {['catalog', 'servers', 'news', 'rules', 'contacts'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
@@ -131,6 +133,7 @@ export default function Index() {
                 >
                   {tab === 'catalog' && 'Каталог'}
                   {tab === 'servers' && 'Серверы'}
+                  {tab === 'news' && 'Новости'}
                   {tab === 'rules' && 'Правила'}
                   {tab === 'contacts' && 'Контакты'}
                 </button>
@@ -284,6 +287,88 @@ export default function Index() {
                   </CardHeader>
                 </Card>
               ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'news' && (
+          <div className="animate-fade-in">
+            <div className="text-center mb-16">
+              <h2 className="text-6xl font-heading font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Новости магазина
+              </h2>
+              <p className="text-muted-foreground text-xl">
+                Последние обновления из нашего Telegram-канала
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              {loadingNews ? (
+                <div className="text-center py-12">
+                  <div className="animate-spin w-12 h-12 border-4 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
+                  <p className="text-muted-foreground">Загрузка новостей...</p>
+                </div>
+              ) : news.length === 0 ? (
+                <Card className="border-2 border-border bg-card/50">
+                  <CardContent className="pt-8 pb-8 text-center">
+                    <Icon name="Newspaper" size={48} className="text-primary mx-auto mb-4" />
+                    <h3 className="text-2xl font-heading font-bold mb-2">Подписывайтесь на наш канал</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Все актуальные новости и акции публикуются в нашем Telegram-канале
+                    </p>
+                    <Button 
+                      onClick={() => window.open('https://t.me/Feruchio_Shop', '_blank')}
+                      size="lg"
+                      className="gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                    >
+                      <Icon name="Send" size={20} />
+                      <span className="ml-2">Открыть канал</span>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ) : (
+                <div className="space-y-6">
+                  {news.map((post: any, index: number) => (
+                    <Card 
+                      key={post.message_id} 
+                      className="hover:shadow-2xl hover:shadow-primary/20 transition-all border-2 border-border bg-card"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <CardHeader className="p-6">
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex-1">
+                            <CardTitle className="font-heading text-xl mb-2">
+                              {post.text?.split('\n')[0] || 'Новость'}
+                            </CardTitle>
+                            <CardDescription className="text-sm">
+                              {new Date(post.date * 1000).toLocaleDateString('ru-RU', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit'
+                              })}
+                            </CardDescription>
+                          </div>
+                          <Icon name="MessageCircle" size={24} className="text-primary flex-shrink-0" />
+                        </div>
+                      </CardHeader>
+                      <CardContent className="px-6 pb-6">
+                        <p className="text-foreground whitespace-pre-wrap">
+                          {post.text?.split('\n').slice(1).join('\n') || post.text}
+                        </p>
+                        {post.photo && (
+                          <img 
+                            src={post.photo} 
+                            alt="Post image" 
+                            className="mt-4 rounded-lg w-full object-cover max-h-96"
+                          />
+                        )}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         )}
