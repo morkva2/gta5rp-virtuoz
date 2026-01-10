@@ -317,7 +317,7 @@ export default function Index() {
                       Все актуальные новости и акции публикуются в нашем Telegram-канале
                     </p>
                     <Button 
-                      onClick={() => window.open('https://t.me/Feruchio_Shop', '_blank')}
+                      onClick={() => window.open('https://t.me/+WL98xKHG-tszZTEy', '_blank')}
                       size="lg"
                       className="gradient-primary text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all"
                     >
@@ -442,7 +442,7 @@ export default function Index() {
               <Card className="border-2 border-border shadow-2xl shadow-primary/10 bg-card">
                 <CardContent className="pt-8 space-y-5 p-8">
                   <a 
-                    href="https://t.me/Feruchio_Shop" 
+                    href="https://t.me/+WL98xKHG-tszZTEy" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center gap-5 p-5 bg-primary/5 rounded-xl hover:bg-primary/10 transition-all hover:scale-[1.02]"
